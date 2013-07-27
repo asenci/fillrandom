@@ -7,7 +7,7 @@ The default options takes this into consideration:
   * no file number or total size limit
 
 ## Usage:
-fillrandom [-h] [-d] [-e EXTENSION] [-n NUMBER] [-s SIZE] source destination
+fillrandom [-h] [-d] [-e **EXTENSION**] [-n **NUMBER**] [-s **SIZE**] source destination
 
 ### positional arguments:
 Argument    | Description
