@@ -6,11 +6,18 @@ The default options takes this into consideration:
   * ".mp3" extension filter
   * no file number or total size limit
 
-## positional arguments:
+## Usage:
+fillrandom [-h] [-d] [-e EXTENSION] [-n NUMBER] [-s SIZE] source destination
+
+### positional arguments:
+Argument    | Description
+:-----------|:---------------------
 source      | source directory
 destination | destination directory
 
-## optional arguments:
+### optional arguments:
+Argument                                     | Description
+:--------------------------------------------|:-------------------------------
 -h, --help                                   | show this help message and exit
 -d, --debug                                  | enable debug output
 -e **EXTENSION**, --extension **EXTENSION**  | file extension filter (defaults to ".mp3")
