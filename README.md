@@ -22,6 +22,7 @@ Argument                                     | Description
 -d, --debug                                  | enable debug output
 -e **EXTENSION**, --extension **EXTENSION**  | file extension filter (defaults to ".mp3")
 -n **NUMBER**, --number **NUMBER**           | limit the number of files to copy
+-r, --random                                 | insert random id on the destination file name
 -s **SIZE**, --size **SIZE**                 | limit the total size (in MB) to copy
 
 ## Licensing:

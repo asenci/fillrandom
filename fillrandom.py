@@ -22,6 +22,8 @@ def parseArgs():
                         help='file extension filter (defaults to ".mp3")')
     parser.add_argument('-n', '--number', type=int,
                         help='limit the number of files to copy')
+    parser.add_argument('-r', '--random', action='store_true',
+                        help='insert random id on the destination file name')
     parser.add_argument('-s', '--size', type=int,
                         help='limit the total size (in MB) to copy')
 
@@ -59,7 +61,7 @@ def scan(directory, extension):
     return files_list
 
 
-def copy(files_list, destination, max_files=None, max_size=None):
+def copy(files_list, destination, insert_rid=False, max_files=None, max_size=None):
     """Copy files from the list to the destination"""
     from random import SystemRandom
     from shutil import copy
@@ -72,8 +74,13 @@ def copy(files_list, destination, max_files=None, max_size=None):
     while True:
         source, file_name = random.choice(files_list)
         src_path = os.path.join(source, file_name)
-        dst_path = os.path.join(destination, file_name)
         file_size = os.stat(src_path).st_size / 1024.0 / 1024.0
+
+        if insert_rid:
+            dst_path = os.path.join(destination,
+                                    '{:03}_{}'.format(total_files, file_name))
+        else:
+            dst_path = os.path.join(destination, file_name)
 
         logging.debug('  {} ({:.2f} MB)'
                       .format(file_name, file_size))
@@ -121,13 +128,15 @@ def run():
     args = parseArgs()
     files_list = scan(args.source, args.extension)
 
-    limits = {}
+    opts = {}
+    if args.random:
+        opts['insert_rid'] = True
     if args.number:
-        limits['max_files'] = args.number
+        opts['max_files'] = args.number
     if args.size:
-        limits['max_size'] = args.size
+        opts['max_size'] = args.size
 
-    copy(files_list, args.destination, **limits)
+    copy(files_list, args.destination, **opts)
 
 if __name__ == '__main__':
     try:
