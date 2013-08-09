@@ -3,8 +3,6 @@ from distutils.core import setup
 setup(
     name='fillrandom',
     version='0.1',
-    packages=[''],
-    py_modules=['fillrandom'],
     scripts=['fillrandom.py'],
     url='https://bitbucket.org/asenci/fillrandom',
     license='ISC License',
