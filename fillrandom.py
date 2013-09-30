@@ -100,7 +100,7 @@ def copy(files_list, destination, insert_rid=False, max_files=None, max_size=Non
         try:
             copy(src_path, dst_path)
 
-        except IOError, e:
+        except IOError as e:
             # No space left
             logging.debug('    {}'.format(e.strerror))
             logging.debug('  Removing file: {}'.format(dst_path))
