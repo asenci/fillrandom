@@ -7,9 +7,11 @@ The default options takes this into consideration:
   * ".mp3" extension filter
   * no file number or total size limit
 
+
 ## Usage:
 
 fillrandom [-h] [-d] [-e **EXTENSION**] [-n **NUMBER**] [-s **SIZE**] source destination
+
 
 ### positional arguments:
 
@@ -17,6 +19,7 @@ Argument    | Description
 :-----------|:---------------------
 source      | source directory
 destination | destination directory
+
 
 ### optional arguments:
 
@@ -29,11 +32,11 @@ Argument                                     | Description
 -r, --random                                 | insert random id on the destination file name
 -s **SIZE**, --size **SIZE**                 | limit the total size (in MB) to copy
 
+
 ## Licensing:
 
 Licensed under ISC license:
 
-    :::text
 	Copyright (c) 2013 Andre Sencioles Vitorio Oliveira <andre@bcp.net.br>
 	
 	Permission to use, copy, modify, and distribute this software for any
