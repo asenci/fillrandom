@@ -4,9 +4,9 @@ setup(
     name='fillrandom',
     version='0.1',
     scripts=['fillrandom.py'],
-    url='https://bitbucket.org/asenci/fillrandom',
+    url='https://github.com/asenci/fillrandom',
     license='ISC License',
-    author='Andre Sencioles Vitorio Oliveira',
-    author_email='andre@bcp.net.br',
+    author='Andre Sencioles',
+    author_email='asenci@gmail.com',
     description='Copy random files from source to destination'
 )
